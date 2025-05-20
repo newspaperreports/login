@@ -3,46 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Font Awsome Linked -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
     <link rel="stylesheet" href="style.css">
+    <!-- Login Newspaper Reports Script -->
     <script type="module" src="asNprLogIn.js"></script>
     <link rel="shortcut icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0Hbb3x0Saw7MOWWYG6VhW9cAVFTrRCP98tcta6V5me9_hPX68uGZXI73d_NZWX_Y-mEIyL1agv0d36jHhRP2s4792jZIaawoVfCNjEY3dvG8-lZ__OxNBnElyOQCuEd9Nj8Jap1GmcTKEEbMBOVu1jWxVmjYm9eu7hOE2tJWdBApJiYbXwKff5LBCZZN5/s16000/A.png.png" type="image/x-icon">
     <meta name="author" content="newspaperreports.com">
-    <title>Log In</title>
+    <title>Log In | Newspaper Reports</title>
 </head>
 <body>
     <!-- Start Newspaper Reports Partner Program Active User -->
-    <div class="content">
-        <div class="login_form">
-            <div class="border_line"></div>
-            <form id="loginForm">
-                <i class="fa-solid fa-circle-user"></i>
-                <h1>Log In</h1>
+    <div class="maincontent container main-container">
+        <div class="asNpr_lgin_fm_ct">
+            <div class="border_line">
+                <form id="asNprloginForm" class="asNpr_lgin_fm asNpr_main_form" action="" method="">
+                    <i class="fa-solid fa-circle-user"></i>
+                        <h1>Log In</h1>
+                    <!--  -->
+                    <div class="asNpr_select_container">
+                        <div class="social">
+                            <div class="providers d-flex">
+                                <div class="provider_buttons">
+                                    <a href="https://newspaperreports.github.io/signup/" target="_parent" class="primary_provider provider_facebook">
+                                        <span class="provider_label">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="provider_icon fb_icon" aria-label="Facebook Icon">
+                                                <circle cx="12" cy="12" r="12" fill="#1877F2" />
+                                                <path fill="#FFFFFF" d="M15.12 8.25h-1.56c-.2 0-.56.27-.56.79v1.19h2.12l-.28 2.25h-1.84V18h-2.31v-5.52H9.38V10.2h1.59V8.91c0-1.63.93-2.91 3.02-2.91.61 0 1.25.06 1.62.12v2.13z"></path>
+                                            </svg>
+                                        </span>
+                                        <!-- <span class="provider_auth">
+                                            <font class="provider_nm">
+                                                Facebook
+                                            </font>
+                                        </span> -->
+                                    </a>
+                                </div>
+                                <div class="provider_buttons">
+                                    <a href="https://newspaperreports.github.io/signup/" onclick="googleLogin()" target="_parent" class="primary_provider provider_google">
+                                        <span class="provider_label">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" x="0px" y="0px" viewBox="0 0 48 48" class="provider_icon google_icon" aria-label="Google Icon">
+                                                <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
+                                            </svg>
+                                        </span>
+                                        <!-- <span class="provider_auth">
+                                            <font class="provider_nm">
+                                                Google
+                                            </font>
+                                        </span> -->
+                                    </a>
+                                </div>
+                                <div class="provider_buttons">
+                                    <a href="https://newspaperreports.github.io/signup/" onclick="appleLogin()" target="_parent" class="primary_provider provider_apple">
+                                        <span class="provider_label">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" x="0px" y="0px" viewBox="0 0 50 50" class="provider_icon apple_icon">
+                                                <path fill="#ffffff" d="M 44.527344 34.75 C 43.449219 37.144531 42.929688 38.214844 41.542969 40.328125 C 39.601563 43.28125 36.863281 46.96875 33.480469 46.992188 C 30.46875 47.019531 29.691406 45.027344 25.601563 45.0625 C 21.515625 45.082031 20.664063 47.03125 17.648438 47 C 14.261719 46.96875 11.671875 43.648438 9.730469 40.699219 C 4.300781 32.429688 3.726563 22.734375 7.082031 17.578125 C 9.457031 13.921875 13.210938 11.773438 16.738281 11.773438 C 20.332031 11.773438 22.589844 13.746094 25.558594 13.746094 C 28.441406 13.746094 30.195313 11.769531 34.351563 11.769531 C 37.492188 11.769531 40.8125 13.480469 43.1875 16.433594 C 35.421875 20.691406 36.683594 31.78125 44.527344 34.75 Z M 31.195313 8.46875 C 32.707031 6.527344 33.855469 3.789063 33.4375 1 C 30.972656 1.167969 28.089844 2.742188 26.40625 4.78125 C 24.878906 6.640625 23.613281 9.398438 24.105469 12.066406 C 26.796875 12.152344 29.582031 10.546875 31.195313 8.46875 Z"></path>
+                                            </svg>
+                                        </span>
+                                        <!-- <span class="provider_auth">
+                                            <font class="provider_nm">
+                                                Apple
+                                            </font>
+                                        </span> -->
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Method Select -->
+                        <div class="asNpr_select_ct">
+                            <div class="user_select">
+                                <font>Or</font>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="login_input">
+                        <input type="email" id="email" name="email" required="required">
+                        <span>E-mail</span>
+                        <i></i>
+                    </div>
 
-                <div class="login_input">
-                    <input type="email" id="email" required="required" />
-                    <span>E-mail</span>
-                    <i></i>
-                </div>
+                    <div class="login_input">
+                        <input type="password" id="password" name="password" required="required" />
+                        <span>Password</span>
+                        <i></i>
+                    </div>
 
-                <div class="login_input">
-                    <input type="password" id="password" required="required" />
-                    <span>Password</span>
-                    <i></i>
-                </div>
+                    <div class="links">
+                        <a href="javascript:void(0);" onclick="handleForgotPassword()" target="_self">
+                            Forget Password
+                        </a>
+                        <a href="https://newspaperreports.github.io/signup/" target="_self">
+                            Sign Up
+                        </a>
+                    </div>
 
-                <div class="links">
-                    <a href="#">Forget Password</a>
-                    <a href="#">Sign Up</a>
-                </div>
-
-                <div class="login_btn">
-                    <input type="submit" value="Log In" id="loginBtn">
-                </div>
-            </form>
+                    <div class="login_btn">
+                        <input type="submit" value="Log In" id="loginBtn">
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     <!-- End Newspaper Reports Partner Program Active User -->
