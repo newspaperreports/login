@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       signInWithEmailAndPassword(auth, email, password)
         .then(() => {
-          alert("✅ Login Successful!");
+          alert("✔️​ Login Successful!");
           window.location.href = "https://www.newspaperreports.com";
         })
         .catch((error) => {
@@ -46,9 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
           ) {
             alert("❌ Incorrect email or password. Please try again.");
           } else if (code === "auth/too-many-requests") {
-            alert("⚠️ অনেকবার চেষ্টা করা হয়েছে। অনুগ্রহ করে কিছুক্ষণ পর আবার চেষ্টা করুন।");
+            alert("⚠️ Tried too many times. Please try again later.");
           } else {
-            alert("⚠️ একটি ত্রুটি ঘটেছে: " + error.message);
+            alert("⚠️ An error occurred: " + error.message);
           }
         });
     });
