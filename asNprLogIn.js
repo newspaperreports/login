@@ -1,24 +1,28 @@
-// Firebase SDK import
+// Firebase SDK imports
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+import {
+  getAuth,
+  signInWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
 
-// ✅ Firebase config
+// ✅ Firebase Config
 const firebaseConfig = {
-  apiKey: "AIzaSyAbFSCL1Fz-O4c2mhppptMKAAdjDhXz3b0",
-  authDomain: "newspaper-reports-live-comment.firebaseapp.com",
-  projectId: "newspaper-reports-live-comment",
-  storageBucket: "newspaper-reports-live-comment.appspot.com",
-  messagingSenderId: "1098835117794",
-  appId: "1:1098835117794:web:77a9bed9be4b8132df40bb"
+  apiKey: "AIzaSyCDLjkm_kIQDZoKHm7w4vh_W__kZE4aoME",
+  authDomain: "authentication-93bb7.firebaseapp.com",
+  databaseURL: "https://authentication-93bb7-default-rtdb.firebaseio.com",
+  projectId: "authentication-93bb7",
+  storageBucket: "authentication-93bb7.appspot.com",
+  messagingSenderId: "430166080842",
+  appId: "1:430166080842:web:b5f2ce18ade5f01daad5b3"
 };
 
-// Initialize Firebase
+// ✅ Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Handle login form submit
+// ✅ DOM Ready
 document.addEventListener("DOMContentLoaded", () => {
-  const loginForm = document.getElementById("loginForm");
+  const loginForm = document.getElementById("asNprloginForm");
 
   if (loginForm) {
     loginForm.addEventListener("submit", (e) => {
@@ -28,20 +32,24 @@ document.addEventListener("DOMContentLoaded", () => {
       const password = document.getElementById("password").value.trim();
 
       signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
+        .then(() => {
           alert("✅ Login Successful!");
-          // redirect বা অন্য কাজ করুন
+          window.location.href = "https://www.newspaperreports.com";
         })
         .catch((error) => {
-        const errorCode = error.code;
+          const code = error.code;
 
-        if (errorCode === "auth/invalid-login-credentials" || errorCode === "auth/wrong-password" || errorCode === "auth/user-not-found") {
-            alert("ইমেইল অথবা পাসওয়ার্ড ভুল হয়েছে। দয়া করে আবার চেষ্টা করুন।");
-        } else if (errorCode === "auth/too-many-requests") {
-            alert("অনেকবার চেষ্টা করা হয়েছে। অনুগ্রহ করে কিছুক্ষণ পর আবার চেষ্টা করুন।");
-        } else {
-            alert("একটি ত্রুটি ঘটেছে: " + error.message);
-        }
+          if (
+            code === "auth/invalid-login-credentials" ||
+            code === "auth/user-not-found" ||
+            code === "auth/wrong-password"
+          ) {
+            alert("❌ Incorrect email or password. Please try again.");
+          } else if (code === "auth/too-many-requests") {
+            alert("⚠️ অনেকবার চেষ্টা করা হয়েছে। অনুগ্রহ করে কিছুক্ষণ পর আবার চেষ্টা করুন।");
+          } else {
+            alert("⚠️ একটি ত্রুটি ঘটেছে: " + error.message);
+          }
         });
     });
   }
