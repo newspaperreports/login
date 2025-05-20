@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       signInWithEmailAndPassword(auth, email, password)
         .then(() => {
-          alert("✔️​ Login Successful!");
+          alert("Thanks ✔️​ Login Successful!");
           window.location.href = "https://www.newspaperreports.com";
         })
         .catch((error) => {
